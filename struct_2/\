@@ -1,0 +1,30 @@
+extern printf
+global main
+section .data
+format: db
+chaine: db
+val1:
+db
+"Entier : %d, Chaîne : %s",10,0
+"-->Hello World !<--",0
+12
+section .text
+main:
+push rbp
+mov rdi,format
+; argument entier n°1 : le format de printf
+movzx rsi,byte[val1]
+; argument entier n°2 : contenu de val1
+mov rdx,chaine
+; argument entier n°3 : une chaîne de caractères
+mov rax,0
+; il n’y a pas d’argument flottant à afficher
+call printf
+; appel de printf
+pop rbp
+mov
+rax, 60
+mov
+rdi, 0
+syscall
+ret
